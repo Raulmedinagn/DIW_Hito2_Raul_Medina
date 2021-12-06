@@ -1,0 +1,39 @@
+@media 
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	/* Forzar la tabla para que ya no sea como una tabla */
+	table, thead, tbody, th, td, tr { 
+		display: block; 
+	}
+	
+	/* Ocultar encabezados de tabla */
+	thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	tr { 
+        border: 1px solid #ccc; 
+    }
+	
+	td { 
+		/* Comportarse como una "fila" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+	
+    td:before { 
+        /* Ahora como un encabezado de tabla */
+        position: absolute;
+        /* Los valores superior/izquierdo imitan el relleno */
+        top: 6px;
+        left: 6px;
+        width: 45%; 
+        padding-right: 10px; 
+        white-space: nowrap;
+    }
+}
